@@ -3,25 +3,31 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here
+  if (str[1] === "b") {
+    let number = str.split("b")
+    return parseInt(number[1], 2)
+
+  } else if (str[1] === "x")
+    return parseInt(str, 16)
 };
 
 /******************************************************************************/
 
+//binary
 console.log(convertToBase10('0b1100')); // 12
 console.log(convertToBase10('0b0101')); // 5
 console.log(convertToBase10('0b1000')); // 8
 console.log(convertToBase10('0b0111')); // 7
 
 console.log('––––––');
-
+//
 console.log(convertToBase10('0b10100101')); // 165
 console.log(convertToBase10('0b11111111')); // 255
 console.log(convertToBase10('0b01010101')); // 85
 console.log(convertToBase10('0b00110011')); // 51
 
 console.log('––––––');
-
+//hexa
 console.log(convertToBase10('0xf')); // 15
 console.log(convertToBase10('0xfa')); // 250
 console.log(convertToBase10('0x1234')); // 4660
